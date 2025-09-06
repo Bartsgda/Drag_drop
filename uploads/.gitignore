@@ -1,0 +1,5 @@
+# Pliki w tym katalogu będą tworzone dynamicznie przez skrypt upload.php
+# podczas przesyłania plików. Aby nie zaśmiecać repozytorium,
+# ignorujemy wszystkie umieszczone tu elementy.
+*
+!.gitignore

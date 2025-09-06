@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drag & Drop Uploader</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Drag &amp; Drop Uploader</h1>
+    <p>Przeciągnij i upuść pliki lub całe foldery, aby je przesłać. Obsługujemy wiele formatów plików!</p>
+  </header>
+  <section id="controls" class="controls">
+    <label class="checkbox-wrapper">
+      <input type="checkbox" id="autoUpload" />
+      <span>Tryb automatycznego ładowania</span>
+    </label>
+    <button id="uploadBtn" class="primary-btn">Wyślij pliki</button>
+  </section>
+  <section id="dropZone" class="drop-zone">
+    <p>Upuść pliki lub foldery tutaj albo kliknij, by je wybrać</p>
+  </section>
+  <!-- Ukryty input do wybierania plików/folderów -->
+  <input type="file" id="fileInput" multiple webkitdirectory directory style="display:none;" />
+  <section class="file-list">
+    <table id="fileTable">
+      <thead>
+        <tr>
+          <th>Nazwa pliku</th>
+          <th>Format</th>
+          <th>Rozmiar (kB)</th>
+          <th>Ścieżka</th>
+          <th>Postęp</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
