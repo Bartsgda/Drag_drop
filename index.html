@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drag & Drop Uploader</title>
+  <title>Drag &amp; Drop Uploader</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,12 +18,15 @@
       <span>Tryb automatycznego ładowania</span>
     </label>
     <button id="uploadBtn" class="primary-btn">Wyślij pliki</button>
+    <button id="clearBtn" class="secondary-btn">Wyczyść listę</button>
+    <span id="fileCounter" class="file-counter" hidden>0 plików</span>
   </section>
   <section id="dropZone" class="drop-zone">
     <p>Upuść pliki lub foldery tutaj albo kliknij, by je wybrać</p>
   </section>
   <!-- Ukryty input do wybierania plików/folderów -->
   <input type="file" id="fileInput" multiple webkitdirectory directory style="display:none;" />
+  <div id="toastContainer" class="toast-container"></div>
   <section class="file-list">
     <table id="fileTable">
       <thead>
@@ -34,6 +37,7 @@
           <th>Ścieżka</th>
           <th>Postęp</th>
           <th>Status</th>
+          <th>Usuń</th>
         </tr>
       </thead>
       <tbody></tbody>
