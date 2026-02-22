@@ -34,12 +34,17 @@ header p {
   color: #555;
 }
 
+/* ---------------------------------------------------------------------------
+   Kontrolki
+--------------------------------------------------------------------------- */
+
 .controls {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
   margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .checkbox-wrapper {
@@ -71,6 +76,35 @@ header p {
   background-color: #0056b3;
 }
 
+.secondary-btn {
+  padding: 8px 18px;
+  font-size: 14px;
+  border: 1px solid #adb5bd;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #495057;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background-color: #e9ecef;
+  border-color: #868e96;
+}
+
+.file-counter {
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+  background-color: #e9ecef;
+  border-radius: 12px;
+  padding: 4px 12px;
+}
+
+/* ---------------------------------------------------------------------------
+   Strefa upuszczania
+--------------------------------------------------------------------------- */
+
 .drop-zone {
   border: 2px dashed #007bff;
   border-radius: 8px;
@@ -88,6 +122,10 @@ header p {
   border-color: #0056b3;
 }
 
+/* ---------------------------------------------------------------------------
+   Lista plików
+--------------------------------------------------------------------------- */
+
 .file-list {
   margin-top: 20px;
   overflow-x: auto;
@@ -97,7 +135,7 @@ header p {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 600px;
+  min-width: 640px;
 }
 
 th,
@@ -131,4 +169,71 @@ th {
 .status {
   font-weight: 600;
   text-transform: capitalize;
+}
+
+/* ---------------------------------------------------------------------------
+   Przycisk usuwania pliku z listy
+--------------------------------------------------------------------------- */
+
+.remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #adb5bd;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+  line-height: 1;
+}
+
+.remove-btn:hover:not(:disabled) {
+  color: #dc3545;
+  background-color: #fff0f0;
+}
+
+.remove-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ---------------------------------------------------------------------------
+   Toasty (komunikaty błędów / info)
+--------------------------------------------------------------------------- */
+
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.toast {
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  max-width: 360px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.toast--error {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.toast--info {
+  background-color: #495057;
+  color: #fff;
+}
+
+.toast--visible {
+  opacity: 1;
+  transform: translateY(0);
 }
